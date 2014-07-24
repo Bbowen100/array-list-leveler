@@ -69,40 +69,56 @@ def big_small(lst):
         
     # gimme the answer    
     return (big, small)
+
 #SO YOU FOUND THE BIGGEST AND THE SMALLEST        
 
 #YOU DID IT CONGRATULATIONS...YAY!!!        
-#TIME TO DO SOME TESTING
+#TIME TO DO SOME TESTING...OK DONE!
 
-# LEVELING ARRAYS FIRST ATTEMPT
-print('An Array should be of the form "[a,b,c,d,1,2,3]"')
-while (True):
-    num_arrays = int(input('please enter the number of arrays you wish to have: '))
+# LEVELING ARRAYS MAIN
+
+def main():
+    '''(null) -> null
+    '''
+    # FIRST MESSAGE TO THE USER
+    print()
+    print('An Array should be of the form "[a,b,c,d,1,2,3]"')
+    print('Please enter 0 arrays into the program to stop it')
     
-    array_lst = []
-    i = 1
-    while i <= num_arrays:
-        curr_array = input('please eneter array # '+str(i)+' : ')
-        n_array = curr_array.strip('[').strip(']').split(',')
-        array_lst.append(n_array)
-        i+=1
-    print(array_lst)
-    
-    # THE NESTED LIST OF ARRAYS HAS BEEN MADE (AND USER PROMPT)
-    
-    #FOR SOME REASON YOU TRIED TO MAKE A RECURSIVE FUNCTION THAT SUMMED NESTED LISTS
-    #HERE idk WHY?
-    
-    bs_tuple = big_small(array_lst)
-    mean = count(array_lst) // num_arrays
-    excess = len(array_lst[bs_tuple[0]]) - mean
-    floaters = count(array_lst) % num_arrays
-    i = 0
-    
-    while (excess > floaters):
-        while(i < excess):
-            array_lst[bs_tuple[1]].insert(0, array_lst[bs_tuple[0]].pop(0))
-            i+=1
-        bs_tuple = big_small(array_lst)
-        excess = len(array_lst[bs_tuple[0]]) - mean
-    print(array_lst)    
+    while(True):    
+
+        num_arrays = int(input('   please enter the number ofarrays you wish to have: '))
+        if(num_arrays != 0):
+            array_lst = []
+            i = 1
+            while i <= num_arrays:
+                curr_array = input('please enter array # '+str(i)+' : ')
+                n_array = curr_array.strip('[').strip(']').split(',')
+                array_lst.append(n_array)
+                i+=1
+            print(array_lst)
+            
+            # THE NESTED LIST OF ARRAYS HAS BEEN MADE (AND USER PROMPT)
+            
+            #FOR SOME REASON YOU TRIED TO MAKE A RECURSIVE FUNCTION THAT SUMMED NESTED LISTS
+            #HERE idk WHY?
+            
+            bs_tuple = big_small(array_lst)
+            mean = count(array_lst) // num_arrays
+            excess = len(array_lst[bs_tuple[0]]) - mean
+            floaters = count(array_lst) % num_arrays
+            i = 0
+            
+            while (excess > floaters):
+                while(i < excess):
+                    array_lst[bs_tuple[1]].insert(0, array_lst[bs_tuple[0]].pop(0))
+                    i+=1
+                bs_tuple = big_small(array_lst)
+                excess = len(array_lst[bs_tuple[0]]) - mean
+            print(array_lst)
+        
+        elif(num_arrays == 0):
+            return('Bye Bye, Have a nice day! :)')
+        
+if(__name__ == '__main__'):
+    main()
