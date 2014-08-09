@@ -15,7 +15,7 @@ floaters = number of elements % number of arrays
 
 1. take the sum of the number of elements in each array
 2. integer-divide the sum by the number of arrasy to find the mean
-3. Loop (while the excess is greter than the floaters on the top)
+3. Loop (while the excess is greater than the floaters on the top)
 { go through each array
    find the smallest in the list and the largest
    calculate the excess in the larger and move the 
