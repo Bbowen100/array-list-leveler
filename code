@@ -88,7 +88,7 @@ def main():
     while(True):    
 
         num_arrays = int(input('   please enter the number ofarrays you wish to have: '))
-        if(num_arrays != 0):
+        if(num_arrays > 0):
             array_lst = []
             i = 1
             while i <= num_arrays:
