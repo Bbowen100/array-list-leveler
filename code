@@ -12,10 +12,11 @@ floaters = number of elements % number of arrays
    excess amount to the smallest }
 
 '''
+import sys
 
 def count(lst, num=0):
     '''(list)->int
-    this function will take an array that is at the most 2 dimensioanl and will 
+    this function will take an array that is at the most 2 dimensional and will 
     count the amount of elements inside the given array.
     
     >>> count([[1,2],[5,9],[6,6,1]])
@@ -37,7 +38,6 @@ def count(lst, num=0):
     
 #DONE! COUNT() WILL RETURN THE NUMBER OF ELEMENTS IN A 2 DIMENSIOANL LIST/ARRAY
 
-#SO YEAH NUMBER 2 IS DONE HERE
 
 #BRACE YOURSELF! YOU HAVE ENTERED THE THIRD AND FINAL STEP
 
@@ -118,7 +118,7 @@ def main():
             print(array_lst)
         
         elif(num_arrays == 0):
-            return('Bye Bye, Have a nice day! :)')
+            sys.exit()
         
 if(__name__ == '__main__'):
     main()
